@@ -1,0 +1,73 @@
+// function crawlPage(url) {
+//   // Send HTTP request to the URL
+//   request(url, function(error, response, html) {
+//     // Check for errors
+//     if (error) {
+//       console.log(error);
+//       return;
+//     }
+
+//     // Load the HTML content into cheerio
+//     const $ = cheerio.load(html);
+
+//     // Find the element with the desired class and extract the text inside it
+//     const text = $('.M\\(0\\) Whs\\(n\\) BdEnd Bdc\\($seperatorColor\\) D\\(itb\\)', html);
+    
+//     console.log(text); // Output: All the text inside the div element
+//   });
+// }
+
+// function crawlPage(url) {
+//   // Send HTTP request to the URL
+//   request(url, function (error, response, html) {
+//     // Check for errors
+//     if (error) {
+//       console.log(error);
+//       return;
+//     }
+
+//     // Load the HTML content into cheerio
+//     const $ = cheerio.load(html);
+
+//     // Find the element with the text "Free Cash Flow"
+//     const freeCashFlowElement = $("*").filter(function () {
+//       return $(this).text() === "Free Cash Flow";
+//     });
+
+//     // Find the next element that contains a number
+//     const nextNumberElement = freeCashFlowElement.next();
+//     while (!nextNumberElement.text().match(/^-?\d+(,\d+)*(\.\d+)?$/)) {
+//       nextNumberElement = nextNumberElement.next();
+//     }
+
+//     // Extract the number from the element
+//     const number = nextNumberElement.text();
+
+//     console.log(number); // Output: -1,510,520
+//   });
+// }
+
+crawlPage(crawlThis);
+
+// This grabs the Free Cash Flow TTM it works but it could be better because i still need the next 3 E.C. data
+
+// const crawlPage = (url) => {
+//   // Send HTTP request to the URL
+//   request(url, function (error, response, html) {
+//     // Check for errors
+//     if (error) {
+//       console.log(error);
+//       return;
+//     }
+//     // Load the HTML content into cheerio
+//     const $ = cheerio.load(html);
+
+//     const text = $('*').filter(function() {
+//       return $(this).text() === 'Free Cash Flow';
+//     }).text();
+
+//     console.log(text); // Output: Free Cash Flow
+//   });
+// };
+
+// crawlPage(crawlThis);
